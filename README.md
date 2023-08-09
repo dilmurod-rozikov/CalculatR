@@ -1,0 +1,2 @@
+# CalculatR
+simple calculator project
