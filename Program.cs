@@ -7,36 +7,18 @@ int b = Convert.ToInt32(Console.ReadLine());
 System.Console.WriteLine("Enter operation(+,-,*,/,%)");
 string operation = Console.ReadLine();
 
-switch (operation){
-    case "+": 
-        System.Console.WriteLine($"Addition: {a + b}"); 
-        break;
-    case "-": 
-        System.Console.WriteLine($"Subtraction: {a - b}");
-        break;
-    case "*":
-        System.Console.WriteLine($"Multiplcation: {a * b}");
-        break;
-    case "/":
-        System.Console.WriteLine($"Division: {a / b}");
-        break;
-    case "%":
-        System.Console.WriteLine($"Reaminder: {a % b}");
-        break;
-    default:
-        System.Console.WriteLine("Operation is not found!!!");
-        break;
-}
+//switch expression
+string result = operation switch 
+{
+    "+" => $"Addition: {a + b}",
+    "-" => $"Subtraction: {a - b}",
+    "*" => $"Multiplcation: {a * b}",
+    "/" => $"Division: {a / b}",
+    "%" => $"Reaminder: {a % b}",
+    _ => "Operation is not found!!!"
+};
 
-// System.Console.WriteLine($"Addition: {a+b}");
-
-// System.Console.WriteLine($"Subtraction: {a-b}");
-
-// System.Console.WriteLine($"Multiplication: {a*b}");
-
-// System.Console.WriteLine($"Division: {a/b}");
-
-// System.Console.WriteLine($"Remainder: {a%b}");
+System.Console.WriteLine(result);
 
 string message = a >= b
         ? "First number is greater than or equal to second nuumber"
