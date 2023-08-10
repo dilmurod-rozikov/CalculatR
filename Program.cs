@@ -4,15 +4,39 @@ int a = Convert.ToInt32(Console.ReadLine());
 System.Console.WriteLine("Enter another number!:");
 int b = Convert.ToInt32(Console.ReadLine());
 
-System.Console.WriteLine($"Addition: {a+b}");
+System.Console.WriteLine("Enter operation(+,-,*,/,%)");
+string operation = Console.ReadLine();
 
-System.Console.WriteLine($"Subtraction: {a-b}");
+switch (operation){
+    case "+": 
+        System.Console.WriteLine($"Addition: {a + b}"); 
+        break;
+    case "-": 
+        System.Console.WriteLine($"Subtraction: {a - b}");
+        break;
+    case "*":
+        System.Console.WriteLine($"Multiplcation: {a * b}");
+        break;
+    case "/":
+        System.Console.WriteLine($"Division: {a / b}");
+        break;
+    case "%":
+        System.Console.WriteLine($"Reaminder: {a % b}");
+        break;
+    default:
+        System.Console.WriteLine("Operation is not found!!!");
+        break;
+}
 
-System.Console.WriteLine($"Multiplication: {a*b}");
+// System.Console.WriteLine($"Addition: {a+b}");
 
-System.Console.WriteLine($"Division: {a/b}");
+// System.Console.WriteLine($"Subtraction: {a-b}");
 
-System.Console.WriteLine($"Remainder: {a%b}");
+// System.Console.WriteLine($"Multiplication: {a*b}");
+
+// System.Console.WriteLine($"Division: {a/b}");
+
+// System.Console.WriteLine($"Remainder: {a%b}");
 
 string message = a >= b
         ? "First number is greater than or equal to second nuumber"
