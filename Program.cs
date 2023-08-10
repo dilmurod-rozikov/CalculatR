@@ -14,10 +14,18 @@ System.Console.WriteLine($"Division: {a/b}");
 
 System.Console.WriteLine($"Remainder: {a%b}");
 
-if(a>b)
-    System.Console.WriteLine("First number is greater than second number.");
-else if(a == b)
-    System.Console.WriteLine("First number is equal to second number.");
-else
-    System.Console.WriteLine("Second number is greater than first number.");
+string message = a >= b
+        ? "First number is greater than or equal to second nuumber"
+        : "Second number is greater than first number.";
+System.Console.WriteLine(message);
 
+if(a > 0 && b > 0)
+    System.Console.WriteLine("Both numbers are positive numbers");
+else if(a == 0 || b == 0)
+    System.Console.WriteLine("One of the numbers is zero");
+else if(a == 0 && b == 0)
+    System.Console.WriteLine("Both of the numbers are zero");
+else if(a < 0 || b < 0)
+    System.Console.WriteLine("One of the numbers is negative");
+else
+    System.Console.WriteLine("Numbers are negative");
