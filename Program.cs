@@ -1,37 +1,21 @@
-﻿Console.WriteLine("Hello, please enter a number!");
+﻿using CALCULATR.classes;
+
+Console.WriteLine("Hello, please enter a number!");
 int a = Convert.ToInt32(Console.ReadLine());
 
 System.Console.WriteLine("Enter another number!:");
 int b = Convert.ToInt32(Console.ReadLine());
 
-System.Console.WriteLine("Enter operation(+,-,*,/,%)");
-string operation = Console.ReadLine();
-
-//switch expression
-string result = operation switch 
+Calculater calc= new Calculater(a, b);
+string operation;
+do
 {
-    "+" => $"Addition: {a + b}",
-    "-" => $"Subtraction: {a - b}",
-    "*" => $"Multiplcation: {a * b}",
-    "/" => $"Division: {a / b}",
-    "%" => $"Reaminder: {a % b}",
-    _ => "Operation is not found!!!"
-};
+    System.Console.WriteLine("Enter operation(+,-,*,/,%), 0 - quit");
+    operation = Console.ReadLine();
+    calc.GetOperation(operation);
 
-System.Console.WriteLine(result);
+}while(operation != "0");
 
-string message = a >= b
-        ? "First number is greater than or equal to second nuumber"
-        : "Second number is greater than first number.";
-System.Console.WriteLine(message);
+Console.WriteLine(calc.Compare());
 
-if(a > 0 && b > 0)
-    System.Console.WriteLine("Both numbers are positive numbers");
-else if(a == 0 || b == 0)
-    System.Console.WriteLine("One of the numbers is zero");
-else if(a == 0 && b == 0)
-    System.Console.WriteLine("Both of the numbers are zero");
-else if(a < 0 || b < 0)
-    System.Console.WriteLine("One of the numbers is negative");
-else
-    System.Console.WriteLine("Numbers are negative");
+calc.CheckSign();
