@@ -1,21 +1,20 @@
 ﻿using CALCULATR.classes;
 
-Console.WriteLine("Hello, please enter a number!");
-int a = Convert.ToInt32(Console.ReadLine());
 
-System.Console.WriteLine("Enter another number!:");
-int b = Convert.ToInt32(Console.ReadLine());
+Calculater calc= new Calculater();
+calc.GetInputs();
 
-Calculater calc= new Calculater(a, b);
-string operation;
 do
 {
     System.Console.WriteLine("Enter operation(+,-,*,/,%), 0 - quit");
-    operation = Console.ReadLine();
-    calc.GetOperation(operation);
+    calc.Operation = Console.ReadLine();
+    System.Console.WriteLine(calc.PrintResult());
 
-}while(operation != "0");
+}while(calc.Operation != "0");
 
-Console.WriteLine(calc.Compare());
+string message = calc.CheckForPositivity()
+            ? "First number is greater than or equal to second nuumber"
+            : "Second number is greater than first number.";
+Console.WriteLine(message);
 
 calc.CheckSign();
